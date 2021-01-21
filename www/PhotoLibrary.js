@@ -255,6 +255,8 @@ photoLibrary.saveImage = function (url, album, success, error, options) {
     function (libraryItem) {
       var library = libraryItem ? [libraryItem] : [];
 
+      if(libraryItem == "OK") success(libraryItem);
+      
       processLibrary(library, function(library) {
         success(library[0] || null);
       }, options);
